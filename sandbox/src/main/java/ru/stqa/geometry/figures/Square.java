@@ -1,16 +1,16 @@
 package ru.stqa.geometry.figures;
 
-//public class Square {
-public record Square(double side) {
+public class Square {
+//public record Square(double side) {
 
-//    //  Свойство класса
-//    private double side; // Описание структуры объекта перечисляет его свойства
-//
-//    // Конструктор класса
-//    // Конструктор присваивает значения параметра в эти свойства
-//    public Square(double side) {
-//        this.side = side;
-//    }
+    //  Свойство класса
+    private double side; // Описание структуры объекта перечисляет его свойства
+
+    // Конструктор класса
+    // Конструктор присваивает значения параметра в эти свойства
+    public Square(double side) {
+        this.side = side;
+    }
 
     public static void printSquareArea(Square s) {
         String text = String.format("Площадь квадрата со стороной %f = %f", s.side, s.area());
