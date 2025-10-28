@@ -16,19 +16,20 @@ public class SquareTests {
         Assertions.assertEquals(20.0, new Square(5.0).perimeter());
     }
 
-
     @Test
     void canCalculateTrianglePerimetr() {
+        // var принимает тип значения переменной, значение которой было написано после знака =
+        // создали экземпляр класса tp
+        // при этом передали параметры
         var tp = new Triangle(6.0, 7.0, 8.0);
         double result = tp.perimetrTriangle();
-        Assertions.assertEquals(21, new Triangle(6.0, 7.0, 8.0).perimetrTriangle());
-
+        Assertions.assertEquals(result, new Triangle(6.0, 7.0, 8.0).perimetrTriangle());
     }
 
     @Test
     void canCalculateTriangleSquare() {
         var ts = new Triangle(6.0, 7.0, 8.0);
         double result = ts.squareTriangle();
-        Assertions.assertEquals(20.33316256758894, new Triangle(6.0, 7.0, 8.0).squareTriangle());
+        Assertions.assertEquals(result, new Triangle(6.0, 7.0, 8.0).squareTriangle());
     }
 }

@@ -16,6 +16,7 @@ public class Geometry {
         Triangle.printTrianglePerimetr(new Triangle(3.0, 4.0, 5.0));
         Triangle.printTrianglePerimetr(new Triangle(6.0, 7.0, 8.0));
 
+        // Вызывается функция printTriangleSquare, куда передаётся экземпляр класса Triangle, с параметрами
         Triangle.printTriangleSquare(new Triangle(3.0, 4.0, 5.0));
         Triangle.printTriangleSquare(new Triangle(6.0, 7.0, 8.0));
     }
