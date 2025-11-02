@@ -1,11 +1,11 @@
 package ru.stqa.geometry.figures;
 
-public class Square {
-//public record Square(double side) {
+//public class Square {
+public record Square(double side) {
 
 
     //  Свойство класса
-    private double side; // Описание структуры объекта перечисляет его свойства
+    // private double side; // Описание структуры объекта перечисляет его свойства
 
     // Конструктор класса
     // Конструктор присваивает значения параметра в эти свойства

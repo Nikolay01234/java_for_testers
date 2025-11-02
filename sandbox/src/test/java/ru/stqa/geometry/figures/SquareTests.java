@@ -3,10 +3,12 @@ package ru.stqa.geometry.figures;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Objects;
+
 public class SquareTests {
     @Test
     void canCalculateArea() {
-        var s = new Square(4.0);
+        var s = new Square(5.0);
         double result = s.area();
         Assertions.assertEquals(25.0, result);
     }
@@ -26,7 +28,30 @@ public class SquareTests {
         }
     }
 
+    @Test
+    void testEquality() {
+        var s1 = new Square(5.0);
+        var s2 = new Square(5.0);
+        Assertions.assertEquals(s1.area(), s2.area());
+    }
 
+    @Test
+    void testNonEquality() {
+        var s1 = new Square(5.0);
+        var s2 = new Square(4.0);
+        Assertions.assertNotEquals(s1.area(), s2.area());
+    }
+
+    @Test
+    void testTrue() {
+        var s1 = new Square(5.0);
+        var s2 = new Square(5.0);
+//        double s1area = s1.area();
+//        double s2area = s2.area();
+//        Assertions.assertTrue(Objects.equals(s1area, s2area));  // сравнение успешно
+//        Assertions.assertTrue(Objects.equals(s1.area(), s2.area())); // сравнение успешно
+        Assertions.assertTrue(s1.equals(s2)); // работает, только когда класс записан,как record
+    }
 
 
     @Test
