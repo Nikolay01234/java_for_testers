@@ -1,5 +1,4 @@
 package ru.stqa.geometry.figures;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -25,6 +24,9 @@ public class SquareTests {
             //OK
         }
     }
+
+
+
 
     @Test
     void testEquality() {
@@ -53,12 +55,17 @@ public class SquareTests {
 
     @Test
     void callCanCalculateTrianglePerimetr() {
-       canCalculateTrianglePerimetr(7.0, 11.0, 4.0);
+       canCalculateTrianglePerimetr(7.0, 11.0, 18.0);
+       //canCalculateTrianglePerimetr(-1.0, 7.0, 9.0);
+        //canCalculateTrianglePerimetr(1.0, 7.0, 9.0);
+
     }
 
     @Test
     void canCalculateTriangleSquare() {
         canCalculateTriangleSquare(7.0, 14.0, 7.0);
+        //canCalculateTriangleSquare(-1.0, 7.0, 9.0);
+        //canCalculateTriangleSquare(1.0, 7.0, 9.0);
     }
 
     //@Test

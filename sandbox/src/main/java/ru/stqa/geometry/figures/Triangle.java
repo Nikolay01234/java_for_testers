@@ -10,17 +10,24 @@ public class Triangle {
     // Конструктор класса заполняет поля класса, чтобы их значения потом могли использовать другие функции
     public Triangle(double sideA, double sideB, double sideC) {
 
-        if (sideA < 0 || sideB < 0 || sideC < 0) {
-            throw new IllegalArgumentException("Triangle side should be non-negative");
-        }
-
-        if (! (sideA + sideB >= sideC && sideA + sideC >= sideB && sideB + sideC >= sideA)) {
-            throw new IllegalArgumentException("In a triangle, the sum of any two sides must be greater than the third side");
-        }
+        triangleSideShouldBeNotNegative(sideA, sideB, sideC);
+        theSumOfTwoSidesIsGreaterThanTheThirdSide(sideA, sideB, sideC);
 
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideC;
+    }
+
+    private static void theSumOfTwoSidesIsGreaterThanTheThirdSide(double sideA, double sideB, double sideC) {
+        if (! (sideA + sideB >= sideC && sideA + sideC >= sideB && sideB + sideC >= sideA)) {
+            throw new IllegalArgumentException("In a triangle, the sum of any two sides must be greater than the third side");
+        }
+    }
+
+    private static void triangleSideShouldBeNotNegative(double sideA, double sideB, double sideC) {
+        if (sideA < 0 || sideB < 0 || sideC < 0) {
+            throw new IllegalArgumentException("Triangle side should be non-negative");
+        }
     }
 
     // Функция принимает на вход объект(экземпляр) класса
@@ -28,11 +35,15 @@ public class Triangle {
     // Triangle - "тип переменной"
     // t - аргумент
     public static void printTrianglePerimetr(Triangle t) {
+        triangleSideShouldBeNotNegative(t.sideA, t.sideB, t.sideC);
+        theSumOfTwoSidesIsGreaterThanTheThirdSide(t.sideA, t.sideB, t.sideC);
         String text = String.format("Периметр треугольника со сторонами %f %f %f = %f", t.sideA, t.sideB, t.sideC, t.perimetrTriangle());
         System.out.println(text);
     }
 
     public static void printTriangleSquare(Triangle t) {
+        triangleSideShouldBeNotNegative(t.sideA, t.sideB, t.sideC);
+        theSumOfTwoSidesIsGreaterThanTheThirdSide(t.sideA, t.sideB, t.sideC);
         String text = String.format("Площадь треугольника со сторонами %f %f %f = %f", t.sideA, t.sideB, t.sideC, t.squareTriangle());
         System.out.println(text);
     }
