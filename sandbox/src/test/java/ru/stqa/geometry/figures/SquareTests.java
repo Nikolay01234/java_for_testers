@@ -3,8 +3,6 @@ package ru.stqa.geometry.figures;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Objects;
-
 public class SquareTests {
     @Test
     void canCalculateArea() {
@@ -53,23 +51,36 @@ public class SquareTests {
         Assertions.assertTrue(s1.equals(s2)); // работает, только когда класс записан,как record
     }
 
-
     @Test
-    void canCalculateTrianglePerimetr() {
-        // var принимает тип значения переменной, значение которой было написано после знака =
-        // создали экземпляр класса tp
-        // при этом передали параметры
-        var tp = new Triangle(6.0, 7.0, 8.0);
-        double result = tp.perimetrTriangle();
-        Assertions.assertEquals(result, new Triangle(6.0, 7.0, 8.0).perimetrTriangle());
+    void callCanCalculateTrianglePerimetr() {
+       canCalculateTrianglePerimetr(7.0, 11.0, 4.0);
     }
 
     @Test
     void canCalculateTriangleSquare() {
-        var ts = new Triangle(6.0, 7.0, 8.0);
-        double result = ts.squareTriangle();
-        Assertions.assertEquals(result, new Triangle(6.0, 7.0, 8.0).squareTriangle());
+        canCalculateTriangleSquare(7.0, 14.0, 7.0);
     }
+
+    //@Test
+    //public void canCalculateTrianglePerimetr() {
+    public void canCalculateTrianglePerimetr(double sideA, double sideB, double sideC) {
+        // var принимает тип значения переменной, значение которой было написано после знака =
+        // создали экземпляр класса tp
+        // при этом передали параметры
+        // var tp = new Triangle(6.0, 7.0, 8.0);
+        var tp = new Triangle(sideA, sideB, sideC);
+        double result = tp.perimetrTriangle();
+        Assertions.assertEquals(result, new Triangle(sideA, sideB, sideC).perimetrTriangle());
+    }
+
+    //@Test
+    public void canCalculateTriangleSquare(double sideA, double sideB, double sideC) {
+        var ts = new Triangle(sideA, sideB, sideC);
+        double result = ts.squareTriangle();
+        Assertions.assertEquals(result, new Triangle(sideA, sideB, sideC).squareTriangle());
+    }
+
+
 
     @Test
     void canCalculateCirclePerimetr() {

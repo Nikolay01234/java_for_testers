@@ -9,6 +9,15 @@ public class Triangle {
 
     // Конструктор класса заполняет поля класса, чтобы их значения потом могли использовать другие функции
     public Triangle(double sideA, double sideB, double sideC) {
+
+        if (sideA < 0 || sideB < 0 || sideC < 0) {
+            throw new IllegalArgumentException("Triangle side should be non-negative");
+        }
+
+        if (! (sideA + sideB >= sideC && sideA + sideC >= sideB && sideB + sideC >= sideA)) {
+            throw new IllegalArgumentException("In a triangle, the sum of any two sides must be greater than the third side");
+        }
+
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideC;
@@ -33,6 +42,7 @@ public class Triangle {
         double perimetr = this.sideA + this.sideB + this.sideC;
         double halfOfThePerimeter = perimetr/2;
         double square = Math.sqrt(halfOfThePerimeter*(halfOfThePerimeter-this.sideA)*(halfOfThePerimeter-this.sideB)*(halfOfThePerimeter-this.sideC));
+        System.out.println("Triangle square is " + square);
         return square;
     }
 
@@ -43,6 +53,8 @@ public class Triangle {
     // для вызова такой функции нужно обязательно создать экземпляр класса, передать свойствам класса значения
     // когда static есть вызов может быть Triangle.perimetr(3,4,5);
     public double perimetrTriangle() {
-        return this.sideA + this.sideB + this.sideC;
+        double perimetr = this.sideA + this.sideB + this.sideC;
+        System.out.println("Triangle perimetr is " + perimetr);
+        return perimetr;
     }
 }
