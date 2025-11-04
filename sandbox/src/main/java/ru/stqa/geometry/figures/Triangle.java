@@ -1,21 +1,26 @@
 package ru.stqa.geometry.figures;
 
-public class Triangle {
+import java.util.Objects;
 
-    // Свойства класса == Поля класса
-    private double sideA;
-    private double sideB;
-    private double sideC;
+//public class Triangle {
+public record Triangle(double sideA, double sideB, double sideC) {
+
+//    // Свойства класса == Поля класса
+//    private double sideA;
+//    private double sideB;
+//    private double sideC;
 
     // Конструктор класса заполняет поля класса, чтобы их значения потом могли использовать другие функции
-    public Triangle(double sideA, double sideB, double sideC) {
+    //public Triangle(double sideA, double sideB, double sideC) { // Используем такую запись,если у нас clacc, а не record
+    public Triangle {
 
         triangleSideShouldBeNotNegative(sideA, sideB, sideC);
         theSumOfTwoSidesIsGreaterThanTheThirdSide(sideA, sideB, sideC);
 
-        this.sideA = sideA;
-        this.sideB = sideB;
-        this.sideC = sideC;
+        // Используем такую запись,если у нас clacc, а не record
+//        this.sideA = sideA;
+//        this.sideB = sideB;
+//        this.sideC = sideC;
     }
 
     private static void theSumOfTwoSidesIsGreaterThanTheThirdSide(double sideA, double sideB, double sideC) {
@@ -67,5 +72,20 @@ public class Triangle {
         double perimetr = this.sideA + this.sideB + this.sideC;
         System.out.println("Triangle perimetr is " + perimetr);
         return perimetr;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Triangle triangle = (Triangle) o;
+        return Double.compare(this.sideA, triangle.sideA) == 0 && Double.compare(this.sideB, triangle.sideB) == 0 && Double.compare(this.sideC, triangle.sideC) == 0
+                || Double.compare(this.sideC, triangle.sideA) == 0 && Double.compare(this.sideA, triangle.sideB) == 0 && Double.compare(this.sideB, triangle.sideC) == 0
+                || Double.compare(this.sideB, triangle.sideA) == 0 && Double.compare(this.sideC, triangle.sideB) == 0 && Double.compare(this.sideA, triangle.sideC) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+//        return Objects.hash(sideA, sideB, sideC);
+        return 1;
     }
 }

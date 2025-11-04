@@ -55,17 +55,17 @@ public class SquareTests {
 
     @Test
     void callCanCalculateTrianglePerimetr() {
-       canCalculateTrianglePerimetr(7.0, 11.0, 18.0);
-       //canCalculateTrianglePerimetr(-1.0, 7.0, 9.0);
-        //canCalculateTrianglePerimetr(1.0, 7.0, 9.0);
+        canCalculateTrianglePerimetr(7.0, 11.0, 18.0);
+//       canCalculateTrianglePerimetr(-1.0, 7.0, 9.0);
+//        canCalculateTrianglePerimetr(1.0, 7.0, 9.0);
 
     }
 
     @Test
     void canCalculateTriangleSquare() {
         canCalculateTriangleSquare(7.0, 14.0, 7.0);
-        //canCalculateTriangleSquare(-1.0, 7.0, 9.0);
-        //canCalculateTriangleSquare(1.0, 7.0, 9.0);
+//        canCalculateTriangleSquare(-1.0, 7.0, 9.0);
+//        canCalculateTriangleSquare(1.0, 7.0, 9.0);
     }
 
     //@Test
